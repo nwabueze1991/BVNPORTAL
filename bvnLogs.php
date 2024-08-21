@@ -73,10 +73,10 @@ include 'validator.php';
             <div class="row mt-1  pl-5">
                 <div class="col-12">
                     <div class="d-inline d-flex">
-                        <form class="form-inline" action="javascript: searchInit();">
+                        <form class="form-inline" action="">
                             <div class="form-group mr-4">
                                 <label class="text-white p-2 dark-primary-color mr-2 rounded" for="operator">Search by Operator: </label>
-                                <select class="border border-dark p-2 form-control rounded" id="operator" onchange="searchInit()" name="searchText">
+                                <select class="border border-dark p-2 form-control rounded" id="operator" name="searchText">
                                     <option value="all">ALL</option>
                                     <option value="mtn">MTN</option>
                                     <option value="airtel">AIRTEL</option>
@@ -91,7 +91,7 @@ include 'validator.php';
                             </div>
                             <div class="form-group mr-4">
                                 <label class="text-white p-2 dark-primary-color mr-2 rounded" for="ussd">USSD Code</label>
-                                <select class="border border-dark p-2 form-control rounded" name="ussd" id="ussd" onchange="searchInit()">
+                                <select class="border border-dark p-2 form-control rounded" name="ussd" id="ussd">
                                     <option value="star0">*0</option>
                                     <option value="star2">*2</option>
                                 </select>
@@ -174,7 +174,7 @@ include 'validator.php';
                     $('#reportrange span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
                     console.log('cb', start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
                     summary(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
-                    searchInit(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+                    // searchInit(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
 
                 }
 
@@ -231,15 +231,15 @@ include 'validator.php';
 
         </script>
         <script>
-            function searchInit(s, e) {
-                openSpinner();
-                const start = s || document.getElementById("dateStart").innerHTML;
-                const end = e || document.getElementById("dateEnd").innerHTML;
-                const operator = document.getElementById("operator").value;
-                const ussd = document.getElementById("ussd").value;
-                console.log(ussd, operator, start, end);
-                search([2, 3, 4], `${start} - ${end};${operator};${ussd}`);
-            }
+            // function searchInit(s, e) {
+            //     openSpinner();
+            //     const start = s || document.getElementById("dateStart").innerHTML;
+            //     const end = e || document.getElementById("dateEnd").innerHTML;
+            //     const operator = document.getElementById("operator").value;
+            //     const ussd = document.getElementById("ussd").value;
+            //     console.log(ussd, operator, start, end);
+            //     search([2, 3, 4], `${start} - ${end};${operator};${ussd}`);
+            // }
         </script>
     </body>
 </html>

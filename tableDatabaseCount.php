@@ -6,7 +6,7 @@ define('API_URL', 'http://192.164.177.170/BVNPORTAL_API/api/tableDatabaseCount.p
 
 $hourly = true;
 $table_header = "Hit count for today.";
-$dataRange = isset($_POST['dateRange']) ? $_POST['dateRange'] : "";
+$dateRange = isset($_POST['dateRange']) ? $_POST['dateRange'] : "";
 
 $resutResponse = callExternalApi($dateRange);
 $report = isset($resutResponse['data']) ? $resutResponse['data'] : array();

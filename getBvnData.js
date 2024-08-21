@@ -48,19 +48,15 @@ $(document).ready(function () {
         "searching": true,
         lengthMenu: [10, 50, 100, 500, 2000, 5000],
         dom: 'lBfrtip',
-        buttons: [
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
-        ],
-        "drawCallback": function (settings) {
+        buttons: ['excelHtml5', 'csvHtml5', 'pdfHtml5'],
+        drawCallback: function (settings) {
             closeSpinner();
         },
-        "ajax": {
+        ajax: {
             url: "https://v2.v2nmobile.com/BVNPORTAL_API/api/getBVNData.php",
             type: "GET",
-            "dataSrc": function (json) {
-                return json.data;
+            dataSrc: function (json) {
+                return [];
             },
 //            beforeSend: function () {
 //                showSpinner(); // Show the spinner before the request is sent
