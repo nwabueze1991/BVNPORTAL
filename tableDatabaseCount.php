@@ -6,7 +6,7 @@ define('API_URL', 'http://192.164.177.170/BVNPORTAL_API/api/tableDatabaseCount.p
 
 $hourly = true;
 $table_header = "Hit count for today.";
-$dateRange = isset($_POST['dateRange']) ? $_POST['dateRange'] : "";
+$dateRange = isset($_POST['dateRange']) ? array('dateRange' => $_POST['dateRange']) : array();
 
 $resutResponse = callExternalApi($dateRange);
 $report = isset($resutResponse['data']) ? $resutResponse['data'] : array();
@@ -18,7 +18,7 @@ function callExternalApi($dateRange) {
     $ch = curl_init(API_URL);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('dateRange' => $dateRange)));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($dateRange));
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
 
     // Execute the POST request
