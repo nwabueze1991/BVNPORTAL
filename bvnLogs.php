@@ -92,6 +92,7 @@ include 'validator.php';
                             <div class="form-group mr-4">
                                 <label class="text-white p-2 dark-primary-color mr-2 rounded" for="ussd">USSD Code</label>
                                 <select class="border border-dark p-2 form-control rounded" name="ussd" id="ussd">
+                                    <option value="">All</option>
                                     <option value="star0">*0</option>
                                     <option value="star2">*2</option>
                                 </select>
@@ -171,9 +172,9 @@ include 'validator.php';
                 const end = value[1] || moment();
                 const start = value[0] || moment().subtract(1, 'days').subtract(29, 'days');
                 function cb(start, end) {
-                    $('#reportrange span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
-                    console.log('cb', start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
-                    summary(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+                    $('#reportrange span').html(start.format('DD-Mon-YYYY') + ' - ' + end.format('DD-Mon-YYYY'));
+                    console.log('cb', start.format('DD-Mon-YYYY') + ' - ' + end.format('DD-Mon-YYYY'));
+                    summary(start.format('DD-Mon-YYYY'), end.format('DD-Mon-YYYY'));
                     // searchInit(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
 
                 }
