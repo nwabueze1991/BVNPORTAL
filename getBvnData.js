@@ -57,7 +57,7 @@ $(document).ready(function () {
             type: "GET",
             data: function (param) {
                 param.operator = $("#operator").val().trim();
-                param.dateRange = $("#reportrange").val().trim();
+                param.dateRange = $("#reportrange span").innerText;
                 param.ussd = $("#ussd").val().trim();
             },
             dataSrc: function (response) {

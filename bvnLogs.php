@@ -172,9 +172,9 @@ include 'validator.php';
                 const end = value[1] || moment();
                 const start = value[0] || moment().subtract(1, 'days').subtract(29, 'days');
                 function cb(start, end) {
-                    $('#reportrange span').html(start.format('DD-Mon-YYYY') + ' - ' + end.format('DD-Mon-YYYY'));
-                    console.log('cb', start.format('DD-Mon-YYYY') + ' - ' + end.format('DD-Mon-YYYY'));
-                    summary(start.format('DD-Mon-YYYY'), end.format('DD-Mon-YYYY'));
+                    $('#reportrange span').html(start.format('DD-MM-YYYY') + ' - ' + end.format('DD-MM-YYYY'));
+                    console.log('cb', start.format('DD-Mon-YYYY') + ' - ' + end.format('DD-MM-YYYY'));
+                    summary(start.format('DD-MM-YYYY'), end.format('DD-MM-YYYY'));
                     // searchInit(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
 
                 }
