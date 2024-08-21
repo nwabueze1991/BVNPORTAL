@@ -57,15 +57,16 @@ $(document).ready(function () {
             type: "GET",
             data: function (param) {
                 param.operator = $("#operator").val().trim();
-                param.dateRange = $("#reportrange span").text;
+                // param.dateRange = $("#reportrange span").text;
                 param.ussd = $("#ussd").val().trim();
             },
             dataSrc: function (response) {
                 console.log(response);
-                let data = response["data"];
-                response["recordsFiltered"] = data["filteredRecordCount"];
-                response["recordsTotal"] = data["overallRecordCount"];
-                return data["logs"];
+                // let data = response["data"];
+                // response["recordsFiltered"] = data["filteredRecordCount"];
+                // response["recordsTotal"] = data["overallRecordCount"];
+                // return data["logs"];
+                return [];
             },
 //            beforeSend: function () {
 //                showSpinner(); // Show the spinner before the request is sent
