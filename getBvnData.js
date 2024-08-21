@@ -57,12 +57,15 @@ $(document).ready(function () {
             type: "GET",
             data: function (param) {
                 param.operator = $("#operator").val().trim();
-                param.dateRange = $("#reportrange span").innerText;
+                param.dateRange = $("#reportrange span").text;
                 param.ussd = $("#ussd").val().trim();
             },
             dataSrc: function (response) {
                 console.log(response);
-                return [];
+                let data = response["data"];
+                response["recordsFiltered"] = data["filteredRecordCount"];
+                response["recordsTotal"] = data["overallRecordCount"];
+                return data["logs"];
             },
 //            beforeSend: function () {
 //                showSpinner(); // Show the spinner before the request is sent
@@ -75,11 +78,11 @@ $(document).ready(function () {
             }
         },
         columns: [
-            {data: 0, title: 'PHONE NUMBER'},
-            {data: 1, title: 'SERVICE CODE'},
-            {data: 2, title: 'USSD CONTENT'},
-            {data: 3, title: 'TIMESTAMP'},
-            {data: 4, title: 'OPERATOR'}
+            {data: "msisdn"},
+            {data: "serviceCode"},
+            {data: "ussdContent"},
+            {data: "timestamp"},
+            {data: "operator"}
         ]
     });
 });
