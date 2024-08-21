@@ -77,7 +77,7 @@ include 'validator.php';
                             <div class="form-group mr-4">
                                 <label class="text-white p-2 dark-primary-color mr-2 rounded" for="operator">Search by Operator: </label>
                                 <select class="border border-dark p-2 form-control rounded" id="operator" name="searchText">
-                                    <option value="all">ALL</option>
+                                    <option value="">ALL</option>
                                     <option value="mtn">MTN</option>
                                     <option value="airtel">AIRTEL</option>
                                     <option value="etisalat">9MOBILE</option>

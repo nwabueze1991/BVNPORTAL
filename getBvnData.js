@@ -55,6 +55,11 @@ $(document).ready(function () {
         ajax: {
             url: "azqy/bvnLogsData.php",
             type: "GET",
+            data: function (param) {
+                param.operator = $("#operator").val().trim();
+                param.dateRange = $("#reportrange").val().trim();
+                param.ussd = $("#ussd").val().trim();
+            },
             dataSrc: function (response) {
                 console.log(response);
                 return [];
