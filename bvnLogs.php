@@ -1,5 +1,5 @@
 <?php
-include "session.php";
+//include "session.php"; todo: uncomment
 include 'cleanInput.php';
 include 'validator.php';
 ?>
