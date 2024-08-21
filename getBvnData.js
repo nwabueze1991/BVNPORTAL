@@ -53,9 +53,10 @@ $(document).ready(function () {
             closeSpinner();
         },
         ajax: {
-            url: "https://v2.v2nmobile.com/BVNPORTAL_API/api/getBVNData.php",
+            url: "azqy/bvnLogsData.php",
             type: "GET",
-            dataSrc: function (json) {
+            dataSrc: function (response) {
+                console.log(response);
                 return [];
             },
 //            beforeSend: function () {
